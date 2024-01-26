@@ -1,0 +1,32 @@
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+body{
+  font-family: monospace;
+  font-size: 1em;
+  background-color: hsl(0, 0%, 95%);
+
+}
+/* Style the outer list */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the heading */
+ul > li {
+  font-weight: bold;
+}
+
+/* Style the inner list */
+ul ul {
+  list-style-type: square;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style list items in the inner list */
+ul ul li {
+  margin-left: 20px;
+}

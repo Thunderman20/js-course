@@ -8,6 +8,8 @@ function initializeTemperatureConverter() {
   // Creating an HSLA color value
   const hslaColor = `hsla(${hue}, ${saturation}%, ${lightness}%, ${alpha})`;
   // create elements
+  const header =document.createElement("header");
+  const section=document.createElement("section");
   const hintList=document.getElementById("formsibling");
   const form = document.createElement("form");
   const h1 = document.createElement("h1");
@@ -20,6 +22,8 @@ function initializeTemperatureConverter() {
   const submitBtn = document.createElement("button");
   const result = document.createElement("p");
   // setAttribute
+  header.innerText="Header";
+  
   h1.innerText = "Tempeature conversion";
   input.setAttribute("type", "number");
   input.setAttribute("id", "textBox");
@@ -39,6 +43,15 @@ function initializeTemperatureConverter() {
   result.setAttribute("id", "result");
   result.innerText = "Select a unit";
   //set styles
+  section.style.border="groove";
+  section.style.display="flex";
+  section.style.flex="1";
+  section.style.flexDirection="row";
+  section.style.padding="20px";
+  section.style.margin="20px";
+  section.style.height="100%";
+  hintList.style.width="70%";
+
   form.style.backgroundColor = "white";
   form.style.textAlign = "center";
   form.style.maxWidth = "350px";
@@ -80,7 +93,11 @@ function initializeTemperatureConverter() {
 
   //end of styling
 
-  hintList.insertAdjacentElement('afterend', form);
+  
+  document.body.prepend(section);
+  document.body.insertBefore(header,section);
+  section.appendChild(hintList); 
+  section.appendChild(form); 
   form.appendChild(h1);
   form.appendChild(input);
   form.appendChild(lineBreak.cloneNode());
